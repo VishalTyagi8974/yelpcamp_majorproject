@@ -1,0 +1,51 @@
+<% layout("/layouts/boilerplate") %>
+
+    <section class="contsiner d-flex justify-content-center align-items-center">
+        <div class="row">
+
+            <div class="col-md-6 offset-md-3 col-xl-4 offset-xl-4">
+                <div class="card shadow">
+                    <img crossorigin="anonymous" class="card-img-top"
+                        src="https://plus.unsplash.com/premium_photo-1664910720389-ee6085b1faa7?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+
+                    <div class="card-body">
+                        <h5 class="card-title">Login</h5>
+
+                        <a href="/auth/google" class="btn btn-danger w-100 ">Login with <svg
+                                classxmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-google" viewBox="0 0 16 16">
+                                <path
+                                    d="M15.545 6.558a9.4 9.4 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.7 7.7 0 0 1 5.352 2.082l-2.284 2.284A4.35 4.35 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.8 4.8 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.7 3.7 0 0 0 1.599-2.431H8v-3.08z" />
+                            </svg>oogle</a>
+
+                        <p style="text-align: center;" class="mb-0">Or</p>
+
+                        <form action="/login" method="post" class=" needs-validation" novalidate>
+                            <label for="username" class="form-label">Username</label>
+                            <div class="mb-3">
+                                <input type="text" name="username" id="username" class="form-control" autofocus
+                                    required>
+                                <div class="valid-feedback">Looks Good!</div>
+                            </div>
+
+                            <label for="password" class="form-label">Password</label>
+                            <div class="mb-3">
+                                <input type="password" name="password" id="password" class="form-control" required>
+                                <div class="valid-feedback">Looks Good!</div>
+                            </div>
+
+                            <button class="btn btn-success w-100" type="submit">Register</button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <div class="row">
+
+    </div>

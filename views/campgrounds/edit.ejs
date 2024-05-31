@@ -1,0 +1,71 @@
+<% layout("/layouts/boilerplate") %>
+    <div class="row">
+        <h1 class="m-auto text-center">Edit CampGround</h1>
+
+        <form action="/campgrounds/<%= campground._id %>?_method=patch"
+            class="my-5 col-md-6 offset-md-3 needs-validation" method="post" enctype="multipart/form-data" novalidate>
+            <label for="title" class="form-label">Title</label>
+            <div class="mb-3">
+                <input type="text" name="title" id="title" value="<%= campground.title %>" class="form-control"
+                    required>
+                <div class="valid-feedback">Looks Good!</div>
+            </div>
+
+            <label for="location" class="form-label">Location</label>
+            <div class="mb-3">
+                <input type="text" name="location" value="<%= campground.location %>" id="location" class="form-control"
+                    required>
+                <div class="valid-feedback">Looks Good!</div>
+            </div>
+
+            <label for="description" class="form-label">Description</label>
+            <div class="mb-3">
+                <textarea name="description" id="description" rows="4" class="form-control"
+                    required><%= campground.description %></textarea>
+                <div class="valid-feedback">Looks Good!</div>
+            </div>
+
+            <label for="price" class="form-label">Price</label>
+            <div class="input-group mb-3">
+                <span class="input-group-text"> &#8377;</span>
+                <input type="text" name="price" value="<%= campground.price %>" id="price" class="form-control"
+                    required>
+                <span class="input-group-text">.00</span>
+                <div class="valid-feedback">Looks Good!</div>
+            </div>
+
+            <span class="form-label mt-2">Current images</span>
+            <div class="d-flex flex-wrap justify-content-center">
+                <% for (let i=0; i < campground.images.length; i++) { %>
+                    <div style="position: relative; max-width: 240px;">
+                        <img src="<%= campground.images[i].thumbnail %>" class="m-2 img-thumbnail" alt="">
+                        <div class="my-3 " style=" position: absolute; right: 0; top: 0; background-color: rgba(255, 255, 255, 0.7);
+                        box-sizing: content-box; border-radius: 5px;">
+
+                            <input type="checkbox" class="btn-check" id="checkbox<%= i %>" name="deleteImages[]"
+                                value="<%= campground.images[i].filename %>" autocomplete="off" style="display: none;">
+
+                            <label style="width: 2.5em; height: 2.5rem;" class="btn btn-outline-danger"
+                                for="checkbox<%= i %>">
+
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-trash-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0" />
+                                </svg>
+
+                            </label>
+                        </div>
+                    </div>
+                    <% } %>
+            </div>
+
+            <label for="image" class="form-label mt-3">Upload images</label>
+            <div class="input-group mb-3">
+                <input type="file" name="images" id="image" class="form-control" multiple>
+                <div class="valid-feedback">Looks Good!</div>
+            </div>
+
+            <button class="btn btn-warning" type="submit">Update</button>
+        </form>
+    </div>

@@ -1,0 +1,37 @@
+#homeNav {
+    background-color: transparent;
+
+}
+
+
+#homeNav a {
+    color: #adb5bd;
+}
+
+#brand {
+    color: white;
+}
+
+body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("https://plus.unsplash.com/premium_photo-1682716827789-1ab8515bcca0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: black;
+}
+
+section {
+    height: 65vh;
+    text-align: center;
+    color: white;
+}
+
+
+#homeNav .nav-link:hover {
+    color: white;
+    border-bottom: 1px solid white;
+}
+
+section div a:hover {
+    filter: brightness(150%);
+}
